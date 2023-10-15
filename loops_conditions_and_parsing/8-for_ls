@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Displays the content of the current directory in a list format and where only after the first dash is displayed
-for file in *; 
+for item in * 
 do
-    if [ -f "$file" ] && [ ! -h "$file" ] && [[ "$file" == *-* ]]; 
-    then
-        echo "${file#*-}"
+    if [ -d $item ] 
+     then
+        echo "$item"
     fi
 done
