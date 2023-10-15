@@ -1,20 +1,13 @@
 #!/usr/bin/env bash
-# Displays the content of the current directory in a list format and where only after the first dash is displayed
-echo Directories
-for item in * 
+# Iterate over files in the current directory
+for file in *; 
 do
-    if [ -d $item ] 
+    # Check if it's a regular file and not a hidden file
+    if [ -f "$file" ] && [[ ! "$file" == .* ]]; 
      then
-        echo "$item"
+        # Extract the part after the first dash
+        name=$(echo "$file" | cut -d'-' -f2-)
+        # Print the modified name
+        echo "$name"
     fi
 done
-
-echo Files
-for item in *
-do
-	if [ -f $item ]
-	then
-		echo "$item"
-	fi	
-
-done	
