@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # displays the content of the file /etc/passwd with story
 while IFS= read -r contents
 do
