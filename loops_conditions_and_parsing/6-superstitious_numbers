@@ -17,5 +17,5 @@ do
                 echo $i
                 ;;
        esac
-       (( i++ ))
+        $(( i++ ))
 done
