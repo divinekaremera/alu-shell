@@ -7,5 +7,4 @@ then
 else
     # Use kill to stop the process
     kill "$pid"
-    echo "4-to_infinity_and_beyond process with PID $pid has been stopped."
 fi
