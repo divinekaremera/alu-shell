@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#display
+prog_pid=()
+readarray -t prog-pid < < (preg -la -x ".bash*" | grep '4-to_infinity_and_beyond' | cut -d ' ' -f 1) for ((1 = 0; 1 < "${#prog_pid[]"; i++))
