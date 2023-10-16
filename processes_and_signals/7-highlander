@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-trap 'echo "I am invincible!!!"; exit' SIGTERM
-while true;
-do
-    echo "To infinity and beyond indefinitely"
-    sleep 2
+#display
+prog_pid=()
+readarray -t prog_pid < <(pgrep -la -x "bash.*" | grep '4-to_infinity_and_beyond' | cut -d ' ' -f 1)
+for ((1 = 0; i < "${#prog_pid[@]}"; i++)) do
+	kill -s SIGTERM "${prog_pid[1]}"
 done
