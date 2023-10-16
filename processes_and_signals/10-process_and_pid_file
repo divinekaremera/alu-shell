@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
-#i love you
-clean_up='rm /var/run/myscript.pid; exit $?'
+# Define the signal handlers
+trap 'echo "I hate the kill command"; exit' SIGTERM
+trap 'echo "Y U no love me?!"; exit' SIGINT
+trap 'rm -f /var/run/myscript.pid; exit' SIGQUIT
 
-echo $$ > "/var/run/myscript.pid"
+# Get the PID and write it to the file
+echo $$ > /var/run/myscript.pid
+
+# Display messages indefinitely
+while true;
+do
+    echo "To infinity and beyond indefinitely"
+    sleep 2
+done
